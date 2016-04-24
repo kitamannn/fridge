@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FridgeDraft</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <header>
+      <div class="logo">
+        <%= link_to "home", index_path %>
+      </div>
+      <!--トップのメニューバー-->
+      <nav>
+        <ul>
+          <!--<li>-->
+            <!--&lt;!&ndash; homeへのリンク &ndash;&gt;-->
+            <!--<%= link_to "home", root_path %>-->
+          <!--</li>-->
+          <!--ログインなど-->
+          <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
+          <% if user_signed_in? %>
+              <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+              <!-- *_path はUserモデルを作成したときにdeviseにより自動で作成される -->
+              <li>
+                Logged in as <strong><%= current_user.email %></strong>.
+              </li>
+              <li>
+                <%= link_to "edit profile", edit_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+              </li>
+          <% else %>
+              <li>
+                <%= link_to "sign up", new_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "sign in (login)", new_user_session_path %>
+              </li>
+          <% end %>
+          <li>
+            <!--モデル操作用-->
+            <%= link_to "items", items_path %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+<!-- Devideが使用するflashメッセージ用 -->
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+    <footer>
+        "fridge" by Sashimihossu. 2015, All rights reserved.
+    </footer>
+
+</body>
+</html>

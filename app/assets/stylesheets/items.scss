@@ -1,0 +1,156 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.item_icon {
+  border: solid 4px rgb(186, 186, 186);
+  //border: solid 4px rgb(215, 214, 69);
+  border-radius: 50px;
+}
+
+#right-column {
+  //overflow-y: scroll;
+  background: center no-repeat url("fridge_logo_05.png") rgb(90, 153, 95);
+  background-size: 240px;
+
+  //.loading {
+  //  position: absolute;
+  //  float: left;
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //  background-color: black;
+  //}
+
+  .main_content {
+    position: relative;
+    float: left;
+    overflow-y: scroll;
+    width: 100%;
+
+    table {
+      position: relative;
+      float: left;
+      padding: 4px;
+      width: 100%;
+      border-spacing: 0;
+      //border: solid 2px rgb(90, 153, 95);
+
+      tr {
+        height: 50px;
+        color: #ffffff;
+
+        td {
+          font-size: 14px;
+
+          a {
+            //text-decoration: none;
+            color: grey;
+          }
+        }
+        td.left {
+          //width: 40%;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-right: solid 2px rgb(90, 153, 95);
+        }
+        td.right {
+          //width: 60%;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        td.icon_td {
+          padding: 10px 0;
+          text-align: center;
+        }
+      }
+      tr:nth-child(even) {
+        background-color: rgb(101, 172, 107);
+      }
+      tr:nth-child(odd) {
+        background-color: rgb(90, 153, 95);
+      }
+      tr.item_icon {
+        //background-color: whitesmoke;
+        background-color: rgb(90, 153, 95);
+      }
+      tr.item_title {
+        td {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      tr.recipe_title {
+        background-color: whitesmoke;
+
+        td {
+          color: grey;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // formのsubmitボタン用
+  input[type="submit"] {
+    margin-bottom: -10px;
+    padding: 0;
+    width: 100%;
+    background-color: rgb(65, 117, 172);
+    border-style: none;
+    color: #ffffff;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .div_button_container {
+    position:absolute;
+    //float: left;
+    bottom: 0;
+    width: 100%;
+  }
+  .div_button {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 60px;
+
+    a {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      color: #ffffff;
+      line-height: 60px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+    }
+    a:hover {
+      filter:alpha(opacity=20);
+      -moz-opacity: 0.2;
+      opacity: 0.2;
+    }
+  }.div_button.button_recipe {
+     background-color: rgb(215, 214, 69);
+   }
+  .div_button.button_edit {
+    background-color: rgb(120, 171, 172);
+  }
+  .div_button.button_destroy {
+    background-color: rgb(172, 89, 89);
+  }
+
+  .clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+}

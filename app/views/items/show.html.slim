@@ -1,0 +1,51 @@
+p#notice = notice
+
+p
+  strong 食材名:
+  = @item.title
+/p
+  strong User id:
+  = @item.user_id
+p
+  strong 購入単位の個数:
+  = @item.amount_at_a_time
+p
+  strong 購入単位のグラム数:
+  = @item.gram_at_a_time
+p
+  strong 購入単位の価格:
+  = @item.price_at_a_time
+p
+  strong 個単位の価格:
+  = @item.price_at_one_amount
+p
+  strong グラム単位の価格:
+  = @item.price_at_one_gram
+p
+  strong 購入日:
+  = @item.start
+p
+  strong 賞味期限日:
+  = @item.end
+/p
+  strong All day:
+  = @item.allDay
+p
+  strong 残数:
+  = @item.remaining_amount
+p
+  strong 残グラム:
+  = @item.remaining_gram
+p
+  strong コメント:
+  = @item.description
+/p
+  strong アイコン:
+  = @item.icon
+
+p
+  = link_to 'この食材を破棄', @item, data: {:confirm => '本当に破棄しますか？'}, :method => :delete
+
+/= link_to 'Edit', edit_item_path(@item)
+/'|
+/= link_to 'Back', items_path
